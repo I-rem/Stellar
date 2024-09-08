@@ -1,6 +1,6 @@
 const StellarSdk = require('stellar-sdk');
 
-const server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
+const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
 
 const sender = StellarSdk.Keypair.fromSecret('SENDER_SECRET_KEY');
 const receiver = StellarSdk.Keypair.fromPublicKey('RECEIVER_PUBLIC_KEY');
@@ -42,3 +42,4 @@ async function checkBalance(publicKey) {
 
 checkBalance(sender.publicKey());
 
+checkBalance(receiver.publicKey());
